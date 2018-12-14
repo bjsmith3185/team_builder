@@ -81,9 +81,9 @@ createNewTeam: function(data) {
 
 
 
-logicForPool: function(teamName) {
+logicForPool: function(teamName, data) {
   // console.log("logicForPool: " + teamName)
-return axios.get("/api/logic/"+teamName);
+return axios.post("/api/logic/"+teamName, data);
 },
 
 

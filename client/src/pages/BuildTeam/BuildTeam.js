@@ -146,7 +146,15 @@ export default class BuildTeam extends React.Component {
         console.log("this is the return for create new team requirement")
         console.log(res.data)
 
-        this.findMatchingEmployees(this.state.teamName);
+        let info = {
+          teamName: this.state.teamName,
+          teamStartDate: this.state.teamStartDate,
+          teamEndDate: this.state.teamEndDate,
+          manager: this.state.manager,
+          assets: data,
+        }
+
+        this.findMatchingEmployees(this.state.teamName, info);
         // this.resetRequirementsState();  not sure what to reset yet
         this.setState({
           requirementsPage: false,
@@ -159,9 +167,9 @@ export default class BuildTeam extends React.Component {
   };
 
   // call a function to make the comparisons
-  findMatchingEmployees = (teamName) => {
+  findMatchingEmployees = (teamName, data) => {
     console.log("finding matching employees")
-    API.logicForPool(teamName)
+    API.logicForPool(teamName, data)
       .then(res => {
         console.log("this is the return for findMatching Employees")
       })

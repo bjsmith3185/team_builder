@@ -7,11 +7,11 @@ module.exports = {
     performMatch: function (teamName, requirements, employeeResults) {
 
        
-        // console.log("this is the requirements")
-        // console.log(requirements);
+        console.log("this is the requirements")
+        console.log(requirements);
 
-        // console.log("these are available employees")
-        // console.log(employeeResults);
+        console.log("these are available employees")
+        console.log(employeeResults);
 
         return new Promise((resolve, reject) => {
 

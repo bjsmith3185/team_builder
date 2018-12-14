@@ -27,7 +27,7 @@ router.route("/")
   .get((req, res) => {
     teamRequirements.findByTeamName(req.params.teamname)
       .then(dbresults => {
-        // console.log("this is the team name response")
+        // console.log("!!!!!!!!!!!!this is the team name response")
         // console.log(dbresults)
         res.json(dbresults)
       })

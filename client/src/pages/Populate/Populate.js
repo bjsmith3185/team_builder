@@ -27,6 +27,13 @@ export default class Populate extends React.Component {
     .catch(err => console.log(err));
   }
 
+  redirectStartPage = () => {
+    this.props.history.push({
+      pathname: "/start",
+      
+    });
+  };
+
 
   render() {
     return (
@@ -45,7 +52,10 @@ export default class Populate extends React.Component {
         <br />
         <br />
         <br />
-        
+        <br />
+        <br />
+        <br />
+        <button onClick={this.redirectStartPage}>Back to app</button>
       </div>
     )
   }
