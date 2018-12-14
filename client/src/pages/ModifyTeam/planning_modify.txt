@@ -1,0 +1,8 @@
+
+
+when user clicks on a teamname to modify
+    - tool bar opens with the following options
+        1) modify team info
+        2) remove an employee
+        3) add new employee
+        

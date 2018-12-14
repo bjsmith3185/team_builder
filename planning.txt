@@ -1,0 +1,357 @@
+
+
+
+                                            NEW PROJECT IDEA
+
+new Database: project3 
+
+collections: employees , teamrequest, teams , pools
+
+
+App will allow a manager to retreive a list of canidates that match specified criteria in order to create a development team.
+
+
+                        WORK FLOW
+-----------------------------------------------
+Manager will enter the following info:
+    - team name
+    - start date
+    - end date
+    - languages
+    - skill level for each language
+
+
+App will return:
+    - employee name
+    - language
+    - skill for each language
+
+
+Manager will be able to save an employee to the team.
+
+---------------------------------------------------
+
+                            LOGIC
+--------------------------------------------------
+- the requested info is compared against employees in the database
+- if the employee is already on a team, a variable will be set to true and not return them
+- if the employee is added to a new team by the manager, they will be added to the teams collection
+
+- a search can be done for the following:
+    - search for specific employee to find their current status
+    - search for team requests
+    - search for current teams 
+
+---------------------------------------------------
+
+                            COLLECTIONS 
+
+COLLECTION: employees
+    - collection of employees that contain the following data
+        - name: (first, last),
+        - employeeNumber: 1234,
+        - assets: [ {
+                    language: "node.js",
+                    level: 2,
+                    }],
+        - available: [ {
+                        condition: false,
+                        assignment: "project name if assigned to one",
+                        beginDate: "date project began",
+                        endDate: "date project will end",
+                        } ]
+--------------------------------------------------
+COLLECTION: teamrequest
+    - collection for a team REQUEST contains the following data
+        - teamName: "alpha",
+        - manger: "john",
+        - startDate: "date",
+        - endDate: "date",
+        - languageRequired: [ {
+                                languageReq: "node",
+                                skillReq: 2,
+                                } ]
+----------------------------------------------------
+COLLECTION: teams
+    - collection for saved teams 
+        - teamName: "alpha",
+        - manager: "john",
+        - startDate: "date",
+        - endDate: "date",
+        - members: [ employeeNumber, employeeNumber ],
+-----------------------------------------------------
+COLLECTION: pool
+    - collection for potential employees to be selected for a team.
+        - teamName: "alpha",
+        - firstName: "brian",
+        - lastName: "smith",
+        - employeeNumber: 123,
+        - employeeAvailable: true,
+        - assets: [],
+---------------------------------------------------
+
+
+
+
+                PAGES 
+
+- Home
+    - user log in
+
+- Start 
+    - links to the following:
+        - Create Team page
+        - View Teams page
+        - Modify Teams page
+        - Admin page 
+
+// the create pages will look like one page        
+
+- Create Team Page 
+    - Inputs for createing team
+
+-  Create - Modify Team Page
+    - Add or Remove from a list of potential employees 
+
+- Create - View Team Page 
+    - input to select team name
+    - list to show team members
+
+
+
+- Admin page
+    - links to the following:
+        - Manage Employees Page
+        - Manage user/passwords Page
+
+- Manage Employees Page
+    - update/modify: name, languages, skill level, project assignement, etc
+
+- Manage user/password page
+    - update/modify username/ password, etc
+
+
+
+-------------------------------------
+
+routes:
+
+- to create the team requirements: /api/teamrequirements
+
+- to create a pool of potential employees for a team: /api/pool 
+
+- to view the results: /api/teams
+
+- to input/modify employees: /api/employees
+
+
+
+
+-------------------------------------------
+
+Issues to address
+ ?s for instructor:
+ - change available to false in the employee collection when they are added to a team. (??????not sure why this isnt working...)
+
+- why is 'pool' not populating in the 'teams' collection??????
+
+- how to make a drop-down selection box in react?
+
+
+
+My Issues to correct:
+- function to change all inputs to lower-case for comparison. 
+
+- all seed files need lowercase entries.
+
+
+
+
+____________________________________________________________________________________-
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+==============================================================================================
+
+database info-----------
+
+mongodb = project3
+
+collections: companyrequirements , companyResults
+
+--------------------------------
+
+
+the front end is in the client folder
+
+HOLLAND'S AREA
+
+    - create files in src/pages
+        - input page is src/pages/Input/Input.js
+            - this should contain state and a form for the following: 
+                - company name
+                - keywords to search for.
+                - possible dates, between, etc
+                - location to search for the data "linkedin"
+
+        - results page is src/pages/Results/Results.js
+            - this should contain state and a form for the following: 
+                -  componentdidload() a function for a .get to utils/API.js to load all resumes that match
+                - results/list component to display the resumes
+
+TREY'S AREA (TERRORIST CATCHER)
+
+    - use the folder called Scraper
+        - there is a file scraper.js in that folder.
+    - create a function to scrape linkedin and return that data.
+        (an api key would be awesome but cheerio can be used to scrape)
+    - the returned data will be sent to a collection called (scrapeddata) a temp collection until matches are made.
+    
+
+Brian's AREA
+
+    - i will continue setting up the axios calls from client to server for now.
+
+
+
+
+
+
+=====================================================================
+
+
+Scraper
+    - each time a scrape is done, that data will be saved in a "temporary" collection (scrapedData).
+    - maybe use axios, cheerio, etc to collect data from page
+    - we will need a location to scrape "linkedin"
+
+UI
+    - user will enter in the following data:
+        - company name
+        - keywords to search for.
+        - possible dates, between, etc
+        - location to search for the data "linkedin"
+
+    - app will do the following logic:
+        - store these inputs into a collection ( "companyname"+searchcriteria )
+                * companyname
+                * [keywords]
+                * searchdate?
+
+        - store the scrape results into a collection ( scrapedData )
+                * [ resumes scraped]
+
+        - logic.js will do the following:
+                * compare each result from ( scrapedData ) with 
+                  each keyword from ( "companyname"+searchcriteria.keywords )
+                * if there is a match
+                    - save that resume to a new collection ( "companyName"+resumes ) 
+                    - if there is not a match, remove that resume from ( scrapedData )
+
+        - return:
+            - company name
+            - <ul> of resumes that match.  db. ( "companyName"+resumes ).findAll({})
+
+------------------------------------------
+
+clientside
+
+
+
+
+
+clientside
+    react/pages/inputInfo
+        - input form for:
+            - company name
+            - keywords to search for.
+            - possible dates, between, etc
+            - location to search for the data "linkedin"
+
+            2 things need to happen from here;
+                1) save the company/keywords to the db
+                2) send the "linkedin" link to the scraper folder
+
+    1)
+    utils/API.js
+        - axios .post request to server
+
+    routes/index.js
+        - receives the axios request and routes it to...
+----
+    routes/API/admin.js
+        - processes the axios .post request with a call to
+
+    controller/adminController.js   
+        - this will put the data into the collection ( "companyname"+searchcriteria.keywords )
+
+    
+    2)
+    utils/API.js
+            - axios .get request to server
+
+    routes/index.js
+        - receives the axios request and routes it to...
+
+    routes/API/scrape.js
+        - processes the axios .get request with a call to
+
+
+    scraper/scraper.js
+            - this will make a scraper request and return the scraped data
+            - then push this data to the db ( scrapedData )  "a temp folder used to search for keywords."
+
+
+    clientside
+          react/pages/results
+            componentdidload()
+
+            utils/API.js
+        - axios .get request to server
+
+    routes/index.js
+        - receives the axios request and routes it to...
+-----
+    routes/API/results.js
+        - processes the axios .get request with a call to
+
+    
+
+     logic/logic.js
+        - this will compare ( scrapedData ) to ( "companyname"+searchcriteria.keywords ) and
+            send all matches to...
+            
+
+    controller/resultsController.js   
+        - this will save the results to a new collection ( "companyName"+resumes ) and return data to client
+
+
+
+
+
+
+
+
+       

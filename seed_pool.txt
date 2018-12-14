@@ -1,0 +1,9 @@
+
+
+db.pools.insert({teamName:"alpha",firstName: "brian",lastName: "smith",addedToTeam: false,employeeNumber: "111",employeeAvailable: true,assets:[ { language: "node",skill: 2 },{language: "express", skill: 1},{language: "react",skill: 2}]})
+
+db.pools.insert({teamName:"alpha",firstName: "john",lastName: "smith",addedToTeam: false,employeeNumber: "121",employeeAvailable: true,assets:[ { language: "node",skill: 2 },{language: "mongodb", skill: 1},{language: "react",skill: 2}]})
+
+db.pools.insert({teamName:"beta",firstName: "trey",lastName: "norris",addedToTeam: false,employeeNumber: "131",employeeAvailable: true,assets:[ { language: "css",skill: 2 },{language: "javascript", skill: 1},{language: "react",skill: 2}]})
+
+db.pools.insert({teamName:"beta",firstName: "holland",lastName: "guy",addedToTeam: false,employeeNumber: "141",employeeAvailable: true,assets:[ { language: "css",skill: 2 },{language: "javascript", skill: 1},{language: "react",skill: 2}]})

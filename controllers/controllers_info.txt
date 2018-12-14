@@ -1,0 +1,12 @@
+
+* companyRequirementsController.js
+    - watches route /api/companyrequirements
+    - puts the data from the company into the collection ("companyrequirements")
+        - companyname, keywords, etc
+
+* companyResultsController.js   
+    - watches route /api/companyResultsController
+    - primarily retreives the matched data specific to each company to display
+
+* scrapedDataController.js
+    - on hold right now

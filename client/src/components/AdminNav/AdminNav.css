@@ -1,0 +1,72 @@
+#topNav {
+    background-color: #789198;
+    overflow: hidden;
+    position: fixed;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 8px;
+    z-index: 20;
+    width: 100%;
+    transition: ease-in-out .5s;
+    opacity: .9;   
+}
+
+.flex-item{
+  justify-content: space-between;
+}
+/* Style the links inside the navigation bar */
+#topNav a {
+  float: left;
+  text-align: center;
+  padding:15px 10px;
+  line-height: 1;
+  text-decoration: none;
+  font-size: 18px;
+  transition: .2s ease-in-out;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+/* Right-aligned section inside the top navigation */
+#topNav-right {
+  float: right;
+}
+
+#topNav > a {
+  position: relative;
+  color: #000;
+  text-decoration: none;
+}
+
+#topNav > a:hover {
+  color: whitesmoke;
+}
+
+#topNav > a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #6EC4A7;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+#topNav > a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+#companyName {
+  font-size: 22px;
+  font-weight: 1000;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}

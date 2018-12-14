@@ -1,0 +1,32 @@
+footer {
+    background: #789198;
+    padding: 30px;
+    text-transform: uppercase;
+}
+
+#footer-container {
+    display: flex;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+h2 {
+    font-weight: 800;
+    transition: .3s ease-in-out;
+}
+
+h2:hover {
+    color: whitesmoke;
+}
+
+#footer-section {
+    line-height: 2;
+}
+
+#content {
+    transition: .3s ease-in-out;
+}
+
+#content:hover {
+    color:#6EC4A7;
+}

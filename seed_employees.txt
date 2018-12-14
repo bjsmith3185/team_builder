@@ -1,0 +1,199 @@
+
+db.employees.insert({
+    firstName: "John",
+    lastName: "Smith",
+    employeeNumber: 393,
+    assets: [{
+        language: "javascript",
+        level: 3,
+    }],
+    available: true,
+});
+
+db.employees.insert({
+    firstName: "Scooter",
+    lastName: "Thompson",
+    employeeNumber: 565,
+    assets: [{
+        language: "react",
+        level: 2,
+    }],
+    available: true,
+});
+
+db.employees.insert({
+    firstName: "Beau",
+    lastName: "Lewis",
+    employeeNumber: 787,
+    assets: [{
+        language: "node",
+        level: 3,
+    }],
+    available:  true,
+});
+
+db.employees.insert({
+    firstName: "Herbert",
+    lastName: "Schultz",
+    employeeNumber: 582,
+    assets: [{
+        language: "express",
+        level: 3,
+    }],
+    available:  true,
+});
+
+db.employees.insert({
+    firstName: "Holland",
+    lastName: "Crookson",
+    employeeNumber: 777,
+    assets: [{
+        language: "css",
+        level: 1,
+    }],
+    available:  true,
+});
+
+db.employees.insert({
+    firstName: "Brian",
+    lastName: "Smurf",
+    employeeNumber: 132,
+    assets: [{
+        language: "css",
+        level: 3,
+    }],
+    available:  true,
+});
+
+db.employees.insert({
+    firstName: "Trey",
+    lastName: "Boomer",
+    employeeNumber: 242,
+    assets: [{
+        language: "react",
+        level: 3,
+    }],
+    available: true,
+});
+
+db.employees.insert({
+    firstName: "Darin",
+    lastName: "Boogsh",
+    employeeNumber: 868,
+    assets: [{
+        language: "c#",
+        level: 3,
+    }],
+    available: true,
+});
+
+db.employees.insert({
+    firstName: "Kevin",
+    lastName: "foof",
+    employeeNumber: 464,
+    assets: [{
+        language: "react",
+        level: 2,
+    }],
+    available: true,
+});
+
+db.employees.insert({
+    firstName: "Adele",
+    lastName: "Yoot",
+    employeeNumber: 824,
+    assets: [{
+        language: "c#",
+        level: 2,
+    }],
+    available: true,
+});
+
+db.employees.insert({
+    firstName: "John",
+    lastName: "Yeet",
+    employeeNumber: 096,
+    assets: [{
+        language: "css",
+        level: 2,
+    }],
+    available: true,
+});
+
+db.employees.insert({
+    firstName: "Bill",
+    lastName: "Crows",
+    employeeNumber: 555,
+    assets: [{
+        language: "node",
+        level: 3,
+    }],
+    available: true,
+});
+
+db.employees.insert({
+    firstName: "Odin",
+    lastName: "Alfather",
+    employeeNumber: 333,
+    assets: [{
+        language: "node",
+        level: 3,
+    }],
+    available: true,
+});
+
+db.employees.insert({
+    firstName: "Daniel",
+    lastName: "Boone",
+    employeeNumber: 343,
+    assets: [{
+        language: "mongo",
+        level: 2,
+    }],
+    available: true,
+});
+
+db.employees.insert({
+    firstName: "Ronald",
+    lastName: "Roogan",
+    employeeNumber: 353,
+    assets: [{
+        language: "mongo",
+        level: 2,
+    }],
+    available:  true,
+});
+
+db.employees.insert({
+    firstName: "George",
+    lastName: "Brush",
+    employeeNumber: 363,
+    assets: [{
+        language: "react",
+        level: 5,
+    }],
+    available:  true,
+});
+
+db.employees.insert({
+    firstName: "Jason",
+    lastName: "Smith",
+    employeeNumber: 373,
+    assets: [{
+        language: "javascript",
+        level: 5,
+    }],
+    available:  true,
+});
+
+db.employees.insert({
+    firstName: "Larry",
+    lastName: "Smith",
+    employeeNumber: 383,
+    assets: [{
+        language: "express",
+        level: 5,
+    }],
+    available:  true,
+});
+
