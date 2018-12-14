@@ -16,8 +16,9 @@ router.route("/")
   .post((req, res) => {
     // console.log("post request to create team")
     // console.log(req.body)
+    let name = req.body.teamName;
 
-    teamRequirements.create(req.body)
+    teamRequirements.create(req.body, name)
       .then(dbresults => res.json(dbresults))
       .catch(err => res.status(422).json(err))
   });

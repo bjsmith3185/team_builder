@@ -17,11 +17,17 @@ module.exports = {
   //   return db.CompanyRequirementsModel
   //     .findById(company)
   // },
-  create: function (data) {
+  create: function (data, name) {
     // console.log("teamRequirementsController.js.create");
-    // console.log(data);
+    // console.log("3333333333333333333333333333")
+    // console.log(name)
+    // console.log(data)
     return db.teamRequestModel
-      .create(data)
+
+    
+
+    // hare!!!!!!!!!!!!!!!!!!!!!111
+    .updateOne({teamName: name}, data, {upsert:true})
   },
   update: function (team, data) {
     // console.log("teamrequirementscontroller.js ")

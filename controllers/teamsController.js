@@ -16,15 +16,21 @@ module.exports = {
       .populate("Pool")
   },
 
-  create: function (data) {
+  create: function (data, name) {
     // console.log("teamController.js.create");
     // console.log(data);
     return db.teamModel
-      .create(data)
+
+
+
+
+    // here!!!!!!!!!!!!!111
+    .updateOne({teamName: name}, data, {upsert:true})
+
   },
 
   update: function (teamName, data) {
-    // console.log("@@@@@@@@@@@@@@@@@@ pushing data to team [] ")
+    console.log("@@@@@@@@@@@@@@@@@@ pushing data to team [] ")
     console.log(teamName);
     console.log(data);
     return db.teamModel

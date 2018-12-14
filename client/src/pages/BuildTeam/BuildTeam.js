@@ -302,7 +302,7 @@ export default class BuildTeam extends React.Component {
 
 
   submitTeam = () => {
-    // console.log("submitting team")
+    console.log("submitting team")
     new Promise((resolve, reject) => {
       for (var i = 0; i < this.state.currentTeamArray.length; i++) {
 
