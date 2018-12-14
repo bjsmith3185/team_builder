@@ -27,6 +27,7 @@ export default class BuildTeam extends React.Component {
     manager: "",
     dateCreated: "",
     assetsArray: [],
+    info: {},
 
     teamPoolArray: [],
     currentTeamArray: [],
@@ -56,6 +57,7 @@ export default class BuildTeam extends React.Component {
       language_5: sessionStorage.getItem("sessionLanguage_5"),
       skill_5: sessionStorage.getItem("sessionSkill_5"),
       manager: sessionStorage.getItem("sessionManager"),
+      info: sessionStorage.getItem("sessionInfo"),
     })
   };
 
@@ -153,6 +155,10 @@ export default class BuildTeam extends React.Component {
           manager: this.state.manager,
           assets: data,
         }
+        sessionStorage.setItem("sessionTeamName", this.state.teamName);
+        sessionStorage.setItem("sessionInfo", info);
+        sessionStorage.setItem("sessionRequirementsPage", false);
+        sessionStorage.setItem("sessionSelectPage", true);
 
         this.findMatchingEmployees(this.state.teamName, info);
         // this.resetRequirementsState();  not sure what to reset yet
@@ -165,6 +171,14 @@ export default class BuildTeam extends React.Component {
       .catch(err => console.log(err));
 
   };
+
+  onPageReload = () => {
+    if(this.state.selectPage) {
+      console.log("reload is starting to work")
+      this.findMatchingEmployees(this.state.teamName, this.state.info)
+      this.startBuildingTeam(this.state.teamName)
+    }
+  }
 
   // call a function to make the comparisons
   findMatchingEmployees = (teamName, data) => {
