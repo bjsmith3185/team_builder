@@ -94,16 +94,7 @@ export default class ModifyTeam extends React.Component {
           manager: res.data.manager,
           language_1: res.data.assets[0].language,
           skill_1: res.data.assets[0].skill,
-          // language_2: res.data.assets[1].language,
-          // skill_2: res.data.assets[1].skill,
-          // language_3: res.data.assets[2].language,
-          // skill_3: res.data.assets[2].skill,
-          // language_4: res.data.assets[3].language,
-          // skill_4: res.data.assets[3].skill,
-          // language_5: res.data.assets[4].language,
-          // skill_5: res.data.assets[4].skill,
-
-        })
+         })
 
         if (res.data.assets[1]) {
           this.setState({

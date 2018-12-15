@@ -10,7 +10,7 @@ export default class UpdateEmployee extends React.Component {
     firstName: "",
     lastName: "",
     employeeNumber: "",
-    employeeAvailable: true,
+    employeeAvailable: "",
     employeeMugShot: "",
 
     language_1: "",
@@ -144,25 +144,46 @@ export default class UpdateEmployee extends React.Component {
 
     for (var i = 0; i < this.state.allEmployeesArray.length; i++) {
       if (employeeNumber === this.state.allEmployeesArray[i].employeeNumber) {
+        console.log("it matches:")
+        console.log( this.state.allEmployeesArray[i])
+
         this.setState({
           firstName: this.state.allEmployeesArray[i].firstName,
           lastName: this.state.allEmployeesArray[i].lastName,
           employeeNumber: this.state.allEmployeesArray[i].employeeNumber,
-          employeeAvailable: this.state.allEmployeesArray[i].employeeAvailable,
-          employeeMugShot: this.state.allEmployeesArray[i].employeeMugShot,
+          available: this.state.allEmployeesArray[i].available,
+          language_1: this.state.allEmployeesArray[i].assets[0].language,
+          skill_1:this.state.allEmployeesArray[i].assets[0].skill,
+         })
 
-          language_1: this.state.allEmployeesArray[i].language_1,
-          skill_1: this.state.allEmployeesArray[i].skill_1,
-          language_2: this.state.allEmployeesArray[i].language_2,
-          skill_2: this.state.allEmployeesArray[i].skill_2,
-          language_3: this.state.allEmployeesArray[i].language_3,
-          skill_3: this.state.allEmployeesArray[i].skill_3,
-          language_4: this.state.allEmployeesArray[i].language_4,
-          skill_4: this.state.allEmployeesArray[i].skill_4,
-          language_5: this.state.allEmployeesArray[i].language_5,
-          skill_5: this.state.allEmployeesArray[i].skill_5,
+        if (this.state.allEmployeesArray[i].assets[1]) {
+          this.setState({
+            language_2: this.state.allEmployeesArray[i].assets[1].language,
+            skill_2: this.state.allEmployeesArray[i].assets[1].skill,
+          })
+        }
 
-        })
+        if (this.state.allEmployeesArray[i].assets[2]) {
+          this.setState({
+            language_3: this.state.allEmployeesArray[i].assets[2].language,
+            skill_3: this.state.allEmployeesArray[i].assets[2].skill,
+          })
+        }
+
+        if (this.state.allEmployeesArray[i].assets[3]) {
+          this.setState({
+            language_4: this.state.allEmployeesArray[i].assets[3].language,
+            skill_4: this.state.allEmployeesArray[i].assets[3].skill,
+          })
+        }
+
+        if (this.state.allEmployeesArray[i].assets[4]) {
+          this.setState({
+            language_5: this.state.allEmployeesArray[i].assets[4].language,
+            skill_5: this.state.allEmployeesArray[i].assets[4].skill,
+          })
+        }
+
       }
     }
 
@@ -236,7 +257,7 @@ export default class UpdateEmployee extends React.Component {
                   <h1 className="text-center">Update Employee</h1>
                   <br />
 
-                  <h4>First Name</h4>
+                  <div>First Name</div>
                   <input
                     name='firstName'
                     // placeholder={this.state.firstName}
@@ -244,7 +265,7 @@ export default class UpdateEmployee extends React.Component {
                     onChange={event => this.change(event)}
                   />
                   <br />
-                  <h4>Last Name</h4>
+                  <div>Last Name</div>
                   <input
                     name='lastName'
                     // placeholder={this.state.lastName}
@@ -252,7 +273,7 @@ export default class UpdateEmployee extends React.Component {
                     onChange={event => this.change(event)}
                   />
                   <br />
-                  <h4>Employee Number</h4>
+                  <div>Employee Number</div>
                   <input
                     name='employeeNumber'
                     // placeholder='"Employee Number"'
@@ -397,7 +418,7 @@ export default class UpdateEmployee extends React.Component {
 
                   <br />
 
-                  <button onClick={this.onSubmit}>Submit</button>
+                  <button onClick={this.onSubmit}>Update Info</button>
                 </form>
 
               )}
