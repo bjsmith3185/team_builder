@@ -170,6 +170,22 @@ export default class ModifyTeam extends React.Component {
     })
   }
 
+  updateRequirements = () => {
+
+    // send as an update to the original create team api
+    // if it is different then offer to add new employees that match the
+    // new requirements
+    this.redirectStartPage();
+
+  }
+
+  redirectStartPage = () => {
+    this.props.history.push({
+      pathname: "/start",
+      
+    });
+  };
+
   render() {
     return (
       <div >
@@ -212,245 +228,146 @@ export default class ModifyTeam extends React.Component {
             <div>
               {/* AREA TO MAKE CHANGES BELOW */}
               {this.state.modifyTeamData ? (
-
                 <div>
-                  <div>{this.state.teamName} </div>
-                  <div>{this.state.teamStartDate} </div>
-                  <div>{this.state.teamEndDate} </div>
-                  <div>{this.state.manager} </div>
+                  <div className="row">
+                    <div className="col-4 text-center">
 
-                  <div>{this.state.language_1} </div>
-                  <div>{this.state.skill_1} </div>
+                      <div className="text-center">Team Name</div>
+                      <input className="text-center"
+                        name='teamName'
+                        placeholder='"Team name"'
+                        value={this.state.teamName}
+                        onChange={event => this.change(event)}
+                      />
+                      <br />
+                      <div className="text-center">Manger</div>
+                      <input className="text-center"
+                        name='manager'
+                        placeholder=''
+                        value={this.state.manager}
+                        onChange={event => this.change(event)}
+                      />
+                      <br />
+                      <div className="text-center">Team Start Date</div>
+                      <input className="text-center"
+                        name='teamStartDate'
+                        placeholder=''
+                        value={this.state.teamStartDate}
+                        onChange={event => this.change(event)}
+                      />
+                      <br />
+                      <div className="text-center">Team End Date</div>
+                      <input className="text-center"
+                        name='teamEndDate'
+                        placeholder=''
+                        value={this.state.teamEndDate}
+                        onChange={event => this.change(event)}
+                      />
+                      <br />
+                      <br />
+                      <br />
+                      <br />
+                      <br />
+                      <br />
 
-                  <div>{this.state.language_2} </div>
-                  <div>{this.state.skill_2} </div>
-
-                  <div>{this.state.language_3} </div>
-                  <div>{this.state.skill_3} </div>
-
-
-                  <input
-                    name='teamName'
-                    placeholder='"Team name"'
-                    value={this.state.teamName}
-                    onChange={event => this.change(event)}
-                  />
-                  <input
-                    name='manager'
-                    placeholder=''
-                    value={this.state.manager}
-                    onChange={event => this.change(event)}
-                  />
-                  <input
-                    name='teamStartDate'
-                    placeholder=''
-                    value={this.state.teamStartDate}
-                    onChange={event => this.change(event)}
-                  />
-                  <input
-                    name='teamEndDate'
-                    placeholder=''
-                    value={this.state.teamEndDate}
-                    onChange={event => this.change(event)}
-                  />
-                  <input
-                    name='language_1'
-                    placeholder=''
-                    value={this.state.language_1}
-                    onChange={event => this.change(event)}
-                  />
-                  <input
-                    name='skill_1'
-                    placeholder=''
-                    value={this.state.skill_1}
-                    onChange={event => this.change(event)}
-                  />
+                      <button onClick={() => this.updateRequirements(this.state.teamName)}>Update</button>
 
 
+                    </div>
 
+                    <div className="col-2 text-center">
+                      <div className="text-center">Languages</div>
+                      <input className="text-center"
+                        name='language_1'
+                        placeholder=''
+                        value={this.state.language_1}
+                        onChange={event => this.change(event)}
+                      />
+                      <br />
+                      <div className="text-center">Languages</div>
+                      <input className="text-center"
+                        name='language_2'
+                        placeholder=''
+                        value={this.state.language_2}
+                        onChange={event => this.change(event)}
+                      />
+                      <br />
+                      <div className="text-center">Languages</div>
+                      <input className="text-center"
+                        name='language_3'
+                        placeholder=''
+                        value={this.state.language_3}
+                        onChange={event => this.change(event)}
+                      />
+                      <br />
+                      <div className="text-center">Languages</div>
+                      <input className="text-center"
+                        name='language_4'
+                        placeholder=''
+                        value={this.state.language_4}
+                        onChange={event => this.change(event)}
+                      />
+                      <br />
+                      <div className="text-center">Languages</div>
+                      <input className="text-center"
+                        name='language_5'
+                        placeholder=''
+                        value={this.state.language_5}
+                        onChange={event => this.change(event)}
+                      />
+                      <br />
+
+                    </div>
+
+                    <div className="col-2 text-center">
+                      <div className="text-center">Level</div>
+                      <input className="text-center"
+                        name='skill_1'
+                        placeholder=''
+                        value={this.state.skill_1}
+                        onChange={event => this.change(event)}
+                      />
+                      <br />
+                      <div className="text-center">Level</div>
+                      <input className="text-center"
+                        name='skill_2'
+                        placeholder=''
+                        value={this.state.skill_2}
+                        onChange={event => this.change(event)}
+                      />
+                      <br />
+                      <div className="text-center">Level</div>
+                      <input className="text-center"
+                        name='skill_3'
+                        placeholder=''
+                        value={this.state.skill_3}
+                        onChange={event => this.change(event)}
+                      />
+                      <br />
+                      <div className="text-center">Level</div>
+                      <input className="text-center"
+                        name='skill_4'
+                        placeholder=''
+                        value={this.state.skill_4}
+                        onChange={event => this.change(event)}
+                      />
+                      <br />
+                      <div className="text-center">Level</div>
+                      <input className="text-center"
+                        name='skill_5'
+                        placeholder=''
+                        value={this.state.skill_5}
+                        onChange={event => this.change(event)}
+                      />
+                      <br />
+
+
+                    </div>
+
+
+                  </div>
+                  
                 </div>
-
-                // <div>
-                //   {/* {this.state.selectedTeam.map(team => ( */}
-                //   <div>
-                //     <p>Update Form for: {team.teamName}</p>
-                //     <br />
-                //     <br />
-                //     <form>
-
-                //       <br />
-                //       {/* <div>What is the teams name?</div> */}
-                //       <input
-                //         name='teamName'
-                //         placeholder='"Team name"'
-                //         value={this.state.teamName}
-                //         onChange={event => this.change(event)}
-                //       />
-                //       <br />
-                //       <div>When will the team begin?</div>
-                //       <input
-                //         name='teamStartDate'
-                //         placeholder='"start date"'
-                //         value={this.state.teamStartDate}
-                //         onChange={event => this.change(event)}
-                //       />
-                //       <br />
-                //       <div>When will the team end?</div>
-                //       <input
-                //         name='teamEndDate'
-                //         placeholder='"end date"'
-                //         value={this.state.teamEndDate}
-                //         onChange={event => this.change(event)}
-                //       />
-                //       <br />
-
-
-                //       <div>Who is the team manager?</div>
-                //       <input
-                //         name='manager'
-                //         placeholder='"Team Manager"'
-                //         value={this.state.manager}
-                //         onChange={event => this.change(event)}
-                //       />
-                //       <br />
-                //       <h3 className="text-center">What coding skill are required?</h3>
-                //       <br />
-
-                //       <div className="row">
-                //         <div className="col-3"></div>
-                //         <div className="col-3">
-                //           <label for="language_1">Language</label>
-                //           <br />
-                //           <input
-                //             name='language_1'
-                //             placeholder='language'
-                //             value={this.state.language_1}
-                //             onChange={event => this.change(event)}
-                //           />
-                //         </div>
-
-                //         <div className="col-3">
-                //           <label for="skill_1">Skill</label>
-                //           <br />
-                //           <input
-                //             name='skill_1'
-                //             placeholder='skill'
-                //             value={this.state.skill_1}
-                //             onChange={event => this.change(event)}
-                //           />
-                //         </div>
-                //       </div>
-
-                //       <div className="row">
-                //         <div className="col-3"></div>
-                //         <div className="col-3">
-                //           {/* <label for="language_2">Language</label> */}
-                //           <br />
-                //           <input
-                //             name='language_2'
-                //             placeholder='language'
-                //             value={this.state.language_2}
-                //             onChange={event => this.change(event)}
-                //           />
-                //         </div>
-
-                //         <div className="col-3">
-                //           {/* <label for="skill_2">skill</label> */}
-                //           <br />
-                //           <input
-                //             name='skill_2'
-                //             placeholder='skill'
-                //             value={this.state.skill_2}
-                //             onChange={event => this.change(event)}
-                //           />
-                //         </div>
-                //       </div>
-
-                //       <div className="row">
-                //         <div className="col-3"></div>
-                //         <div className="col-3">
-                //           {/* <label for="language_1">Language</label> */}
-                //           <br />
-                //           <input
-                //             name='language_3'
-                //             placeholder='language'
-                //             value={this.state.language_3}
-                //             onChange={event => this.change(event)}
-                //           />
-                //         </div>
-
-                //         <div className="col-3">
-                //           {/* <label for="skill_3">skill</label> */}
-                //           <br />
-                //           <input
-                //             name='skill_3'
-                //             placeholder='skill'
-                //             value={this.state.skill_3}
-                //             onChange={event => this.change(event)}
-                //           />
-                //         </div>
-                //       </div>
-
-                //       <div className="row">
-                //         <div className="col-3"></div>
-                //         <div className="col-3">
-                //           {/* <label for="language_4">Language</label> */}
-                //           <br />
-                //           <input
-                //             name='language_4'
-                //             placeholder='language'
-                //             value={this.state.language_4}
-                //             onChange={event => this.change(event)}
-                //           />
-                //         </div>
-
-                //         <div className="col-3">
-                //           {/* <label for="skill_4">skill</label> */}
-                //           <br />
-                //           <input
-                //             name='skill_4'
-                //             placeholder='skill'
-                //             value={this.state.skill_4}
-                //             onChange={event => this.change(event)}
-                //           />
-                //         </div>
-                //       </div>
-
-                //       <div className="row">
-                //         <div className="col-3"></div>
-                //         <div className="col-3">
-                //           {/* <label for="language_5">Language</label> */}
-                //           <br />
-                //           <input
-                //             name='language_5'
-                //             placeholder='language'
-                //             value={this.state.language_5}
-                //             onChange={event => this.change(event)}
-                //           />
-                //         </div>
-
-                //         <div className="col-3">
-                //           {/* <label for="skill_5">skill</label> */}
-                //           <br />
-                //           <input
-                //             name='skill_5'
-                //             placeholder='skill'
-                //             value={this.state.skill_5}
-                //             onChange={event => this.change(event)}
-                //           />
-                //         </div>
-                //       </div>
-
-
-                //       <br />
-
-                //       <button onClick={this.onSubmit}>Submit</button>
-                //     </form>
-                //   </div>
-
-                // ))}
-
-                // </div>
               ) : (
                   <div></div>
                 )}
